@@ -4,7 +4,7 @@ import ResourceLinks from 'gatsby-theme-carbon/src/components/LeftNav/ResourceLi
 const links = [
   {
     title: '🐣 Quick Install',
-    href: 'https://github.com/niklaushirt/ibm-aiops-deployer#-1-quick-install',
+    href: 'https://github.com/niklaushirt/ibm-aiops-deployer#2-quick-install',
   },  
   {
     title: '🚀 Ready-to-use environments' ,
