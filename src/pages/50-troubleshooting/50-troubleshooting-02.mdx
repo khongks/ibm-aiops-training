@@ -13,14 +13,12 @@ If the aiops-topology-xxx Pods are crashlooping, apply the following patches. I 
 
 ```bash
 
-oc patch deployment aiops-topology-merge -n ibm-aiops --patch-file "./ansible/roles/ibm-aiops-ai-manager//templates/waiops/patches/aiops-topology-merge-patch.yaml"
-oc patch deployment aiops-topology-search -n ibm-aiops --patch-file "./ansible/roles/ibm-aiops-ai-manager//templates/waiops/patches/aiops-topology-search-patch.yaml"
-oc patch deployment aiops-topology-status -n ibm-aiops --patch-file "./ansible/roles/ibm-aiops-ai-manager//templates/waiops/patches/aiops-topology-status-patch.yaml"
-oc patch deployment aiops-topology-layout -n ibm-aiops --patch-file "./ansible/roles/ibm-aiops-ai-manager//templates/waiops/patches/aiops-topology-layout-patch.yaml"
+oc patch deployment aiops-topology-merge -n ibm-aiops --patch-file "./ansible/roles/ibm-aiops-install-instance/templates/aiops/patches/aiops-topology-merge-patch.yaml"
+oc patch deployment aiops-topology-search -n ibm-aiops --patch-file "./ansible/roles/ibm-aiops-install-instance/templates/aiops/patches/aiops-topology-search-patch.yaml"
+oc patch deployment aiops-topology-status -n ibm-aiops --patch-file "./ansible/roles/ibm-aiops-install-instance/templates/aiops/patches/aiops-topology-status-patch.yaml"
+oc patch deployment aiops-topology-layout -n ibm-aiops --patch-file "./ansible/roles/ibm-aiops-install-instance/templates/aiops/patches/aiops-topology-layout-patch.yaml"
 
 ```
-
-
 
 
 ## Pods with Pull Error

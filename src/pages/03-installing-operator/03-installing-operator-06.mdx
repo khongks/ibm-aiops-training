@@ -28,17 +28,15 @@ oc get csv -n ibm-aiops
 
 <br/>
 
-And you should see 7 entries with `Succeeded` state
+And you should see 7 entries with `Succeeded` state (version numbers may vary)
 
 ```yaml
-NAME                                     DISPLAY                                      VERSION   REPLACES                                 PHASE
-ibm-aiops-orchestrator.v4.1.1            IBM CloudPak for AIOps CP4AIOPS     3.5.1                                              Succeeded
-ibm-automation-core.v1.3.11              IBM Automation Foundation Core               1.3.11    ibm-automation-core.v1.3.10              Succeeded
-ibm-automation-elastic.v1.3.10           IBM Elastic                                  1.3.10    ibm-automation-elastic.v1.3.9            Succeeded
-ibm-automation-eventprocessing.v1.3.11   IBM Automation Foundation Event Processing   1.3.11    ibm-automation-eventprocessing.v1.3.10   Succeeded
-ibm-automation-flink.v1.3.10             IBM Automation Foundation Flink              1.3.10    ibm-automation-flink.v1.3.9              Succeeded
-ibm-automation.v1.3.11                   IBM Automation Foundation                    1.3.11    ibm-automation.v1.3.10                   Succeeded
-ibm-common-service-operator.v3.21.0      IBM Cloud Pak foundational services          3.21.0                                             Succeeded
+NAME                                  DISPLAY                                     VERSION   REPLACES                        PHASE
+elasticsearch-operator.v5.6.10        OpenShift Elasticsearch Operator            5.6.10    elasticsearch-operator.v5.6.9   Succeeded
+ibm-aiops-orchestrator.v4.1.2         IBM Cloud Pak for Watson AIOps AI Manager   4.1.2                                     Succeeded
+ibm-automation-elastic.v1.3.14        IBM Elastic                                 1.3.14                                    Succeeded
+ibm-automation-flink.v1.3.14          IBM Automation Foundation Flink             1.3.14                                    Succeeded
+ibm-common-service-operator.v3.23.7   IBM Cloud Pak foundational services         3.23.7                                    Succeeded
 ```
 
 <br/>
@@ -49,7 +47,7 @@ ibm-common-service-operator.v3.21.0      IBM Cloud Pak foundational services    
 
 1. Go to Operators Installed Operators 
 
-1. You should get this:
+1. You should get something similar to this (version numbers may vary):
 
 	![image](./../images/53_operators_installed.png)
 
