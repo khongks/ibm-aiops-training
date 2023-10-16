@@ -8,10 +8,13 @@ title: "Get your ROKS Cluster"
 
 IBMers and Partners can get a temporary cluster from [**Techzone**](https://techzone.ibm.com/collection/tech-zone-certified-base-images).
 
+1. Select `VMWare on IBM Cloud Environments` in the left menu
 
-1. Select `OpenShift Cluster (VMware on IBM Cloud) - IPI - Public` or `OpenShift Cluster (VMware on IBM Cloud) - UPI - Public` that you want to use
+1. Select `OpenShift Cluster (VMware on IBM Cloud) - UPI - Public` or `OpenShift Cluster (VMware on IBM Cloud) - IPI - Public` you want to use
 
-1. Create a cluster for `Practice/Self Education` or `Test` if you don't have an Opportunity Number
+1. Click `Reserve Now`
+
+1. Create a cluster for `Practice/Self Education` if you don't have an Opportunity Number
 
 1. Select your preferred Geograpy
 
@@ -21,18 +24,16 @@ IBMers and Partners can get a temporary cluster from [**Techzone**](https://tech
 
 	![K8s CNI](./../images/roks03.png)
 
-1. Select Openshift Parameters
-
-   ![K8s CNI](./../images/roks02.png)
+1. Make sure you select Openshift Parameters (don't touch the other ones)
 
    - OpenShift Version: **4.12**
 
-   - Storage OCS/ODF Size: **5TiB** - This is important as with the other options your installation will run out of space rapidly.
+   - Storage: OCS/ODF Size: **ODF - 5 TB** or **Managed NFS - 2 TB**
 
 	- Worker node count: **5**
 	- Flavour: **32 vCPU X 128 GB** ❗ 
 
-	> ❗ If you want to install AIManager, Event Manager, Turbonomic and/or Instana please select **32 vCPU X 128 GB** 
+	> ❗ If you want to install CP4AIOps, Turbonomic and/or Instana please select **32 vCPU X 128 GB** 
 
 
 1. Click `Submit`
