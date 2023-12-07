@@ -15,54 +15,6 @@ If you are not following this as part of an IBM training course, you will have t
 
 </InlineNotification>
 
-There are two ways of installing Instana
-
-<Accordion>
-<AccordionItem title="🔎 If you are following an IBM Course">
-
-## Get the `oc login` command
-
-1. Open your Openshift Web Console
-1. Select `Copy Login Command`
-
-	![image](./../images/01_fzth_ocp_connect.png)
-
-1. Copy the `oc login ..` string
-
-	![image](./../images/02_fzth_ocp_connect.png)
-
-
-## Install and activate Instana
-
-1. Go to the following page:
-
-    <a href="https://ibm.biz/training-activation" target="_blank" >🚀 Training Activation Portal</a>
-
-2. Login with the Access Information **provided by the Course Trainer**:
-    - Course ID
-    - EMail Address
-    - Course Password
-
-    ![instana](./../images/instana/instana_install_02.png)
-
-2. Click on `Install and Activate Instana`
-
-    ![instana](./../images/instana/instana_install_01.png)
-
-2. Paste in the `oc login ..`
-
-3. Click `Activate`
-
-    ![instana](./../images/instana/instana_install_03.png)
-
-2. If all is good, you should get a success message:
-
-    ![instana](./../images/instana/instana_install_04.png)
-
-</AccordionItem>
-</Accordion>
-
-
 
 
 <Accordion>
@@ -113,7 +65,7 @@ spec:
               echo ""
               echo "------------------------------------------------------------------------------------------------------------------------------"
               echo " 📥 Clone Repo https://github.com/niklaushirt/ibm-aiops-deployer.git"
-              git clone https://github.com/niklaushirt/ibm-aiops-deployer.git -b ibm-aiops_stable
+              git clone https://github.com/niklaushirt/ibm-aiops-deployer.git
               cd ibm-aiops-deployer
               echo ""
               echo ""
@@ -132,9 +84,10 @@ spec:
               echo " 🚀 Injecting Licenses"
               echo "     INSTANA_SALES_KEY: $INSTANA_SALES_KEY"
               echo "     INSTANA_AGENT_KEY: $INSTANA_AGENT_KEY"
-              cp ./ansible/configs/ibm-aiops-roks-instana.yaml /tmp/ibm-aiops-roks-practicum.yaml
+              cp ./ansible/configs/ibm-aiops-instana.yaml /tmp/ibm-aiops-roks-practicum.yaml
               sed -i -e "s/sales_key: 'NONE'/sales_key: '$INSTANA_SALES_KEY'/g" /tmp/ibm-aiops-roks-practicum.yaml
               sed -i -e "s/agent_key: 'NONE'/agent_key: '$INSTANA_AGENT_KEY'/g" /tmp/ibm-aiops-roks-practicum.yaml
+              sed -i -e "s/global_password: CHANGEME/global_password: $INSTANA_PASSWORD/g" /tmp/ibm-aiops-roks-practicum.yaml
 
 
               echo "------------------------------------------------------------------------------------------------------------------------------"
@@ -155,6 +108,9 @@ spec:
             value : "<YOUR_SALES_KEY>"
           - name: INSTANA_AGENT_KEY
             value : "<YOUR_AGENT_KEY>"
+          - name: INSTANA_PASSWORD
+            value : "<YOUR_INSTANA_PASSWORD>"
+
       restartPolicy: Never
   backoffLimit: 4
 EOF
@@ -163,7 +119,7 @@ EOF
 <br/>
 <br/>
 
-2. Replace the <YOUR_SALES_KEY> and <YOUR_AGENT_KEY> with the keys obtained from your instructor.
+2. Replace the <YOUR_SALES_KEY> and <YOUR_AGENT_KEY>. And provide a Password of your choice for <YOUR_INSTANA_PASSWORD>.
 
 ```yaml
           env:
@@ -171,6 +127,8 @@ EOF
             value : "<YOUR_SALES_KEY>"
           - name: INSTANA_AGENT_KEY
             value : "<YOUR_AGENT_KEY>"
+          - name: INSTANA_PASSWORD
+            value : "<YOUR_INSTANA_PASSWORD>"
 ```
 
 <br/>
@@ -186,7 +144,7 @@ If you don't have the license keys, Instana can not be installed and you won't b
 
 <br/>
 
-3. Run the modified script from your terminla to start the creation of the Training Resources.
+3. Run the modified script from your terminal to start the creation of the Training Resources.
 
 
 You should get:

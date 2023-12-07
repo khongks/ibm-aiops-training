@@ -181,22 +181,22 @@
     - title: Installing Instana
       path: /09-configure-instana/09-configure-instana-00
 
-- title: Install Instana
-  pages:
-    - title: Instana
-      path: /09-configure-instana/09-configure-instana-00
-    - title: Installing Instana
-      path: /09-configure-instana/09-configure-instana-01
+# - title: Install Instana
+#   pages:
+#     - title: Instana
+#       path: /09-configure-instana/09-configure-instana-00
+#     - title: Installing Instana
+#       path: /09-configure-instana/09-configure-instana-01
 
-- title: Configure Instana
-  pages:
-    - title: Instana Setup
-      path: /09-configure-instana/09-configure-instana-02
-    - title: Create Application
-      path: /09-configure-instana/09-configure-instana-03
-    - title: Instana Integration
-      path: /09-configure-instana/09-configure-instana-04
-  hasDivider: true
+# - title: Configure Instana
+#   pages:
+#     - title: Instana Setup
+#       path: /09-configure-instana/09-configure-instana-02
+#     - title: Create Application
+#       path: /09-configure-instana/09-configure-instana-03
+#     - title: Instana Integration
+#       path: /09-configure-instana/09-configure-instana-04
+#   hasDivider: true
 
 - title: Turbonomic
   pages:
