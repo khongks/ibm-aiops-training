@@ -2,3 +2,11 @@
 **/.DS_Store
 **/launch.sh
 ca.crt
+.DS_Store
+.DS_Store
+static/.DS_Store
+**/DO_NOT_DELIVER
+**/.DS_Store
+**/launch.sh
+ca.crt
+**/__pycache__
