@@ -1,0 +1,160 @@
+---
+title: "Install CP4AIOPS Prerequisites"
+---
+
+### Installing the CP4AIOPS Prerequisites
+
+In this chapter you will install CP4AIOPS Prerequisites
+
+
+
+## 🚀 TASK: Install the Certificate Manager
+<a href="https://www.ibm.com/docs/en/cloud-paks/cloud-pak-aiops/4.6.0?topic=aiops-starter-installation#cert_mgr" target="_blank" >🌏 Documentation for the Task</a>
+
+
+
+
+If you do not have a certificate manager then you must install one. The IBM Cloud Pak® foundational services Cert Manager is recommended, and can be installed with the following steps.
+
+
+
+
+
+
+<Accordion>
+<AccordionItem title="💡 Solution">
+
+1. Run the following command to create an instance of the Certificate Manager.
+
+  ```yaml
+  cat << EOF | oc apply -f -
+  apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: ibm-cert-manager
+  ---
+  apiVersion: operators.coreos.com/v1
+  kind: OperatorGroup
+  metadata:
+    name: ibm-cert-manager-operator-group
+    namespace: ibm-cert-manager
+  ---
+  apiVersion: operators.coreos.com/v1alpha1
+  kind: Subscription
+  metadata:
+    name: ibm-cert-manager-operator
+    namespace: ibm-cert-manager
+  spec:
+    channel: v4.2
+    installPlanApproval: Automatic
+    name: ibm-cert-manager-operator
+    source: ibm-operator-catalog
+    sourceNamespace: openshift-marketplace
+  EOF
+  ```
+
+
+<InlineNotification kind="info">
+
+This creates the Certificate Manager. 
+
+
+## Check if the installation is ready
+	
+```bash
+oc get pods -n ibm-cert-manager        
+
+NAME                                         READY   STATUS    RESTARTS   AGE
+cert-manager-cainjector-cb68d96d7-6lzmx      1/1     Running   0          45h
+cert-manager-controller-86d9857d98-b9jzm     1/1     Running   0          45h
+cert-manager-webhook-69cc487dfb-xncpp        1/1     Running   0          45h
+ibm-cert-manager-operator-6f4d595945-88djw   1/1     Running   0          45h
+```
+
+</InlineNotification>
+
+
+</AccordionItem>
+</Accordion>
+
+
+
+
+
+
+
+
+
+## 🚀 TASK: Install the License Manager
+<a href="https://www.ibm.com/docs/en/cloud-paks/cloud-pak-aiops/4.6.0?topic=aiops-starter-installation#license" target="_blank" >🌏 Documentation for the Task</a>
+
+
+
+
+If you do not have a certificate manager then you must install one. The IBM Cloud Pak® foundational services Cert Manager is recommended, and can be installed with the following steps.
+
+
+
+
+
+
+<Accordion>
+<AccordionItem title="💡 Solution">
+
+1. Run the following command to create an instance of the Certificate Manager.
+
+  ```yaml
+  cat << EOF | oc apply -f -
+  apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: ibm-licensing
+  ---
+  apiVersion: operators.coreos.com/v1
+  kind: OperatorGroup
+  metadata:
+    name: ibm-licensing-operator-group
+    namespace: ibm-licensing
+  spec:
+    targetNamespaces:
+    - ibm-licensing
+  ---
+  apiVersion: operators.coreos.com/v1alpha1
+  kind: Subscription
+  metadata:
+    name: ibm-licensing-operator-app
+    namespace: ibm-licensing
+  spec:
+    channel: v4.2
+    installPlanApproval: Automatic
+    name: ibm-licensing-operator-app
+    source: ibm-operator-catalog
+    sourceNamespace: openshift-marketplace
+  EOF
+  ```
+
+
+<InlineNotification kind="info">
+
+This creates the Certificate Manager. 
+
+
+## Check if the installation is ready
+	
+```bash
+oc -n ibm-licensing get pods     
+
+NAME                                              READY   STATUS    RESTARTS      AGE
+ibm-licensing-operator-f784f6654-dw94v            1/1     Running   1 (45h ago)   45h
+ibm-licensing-service-instance-6f54c846c7-srm5s   1/1     Running   0             45h
+```
+
+</InlineNotification>
+
+
+</AccordionItem>
+</Accordion>
+
+
+
+

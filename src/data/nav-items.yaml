@@ -44,6 +44,8 @@
 
 - title: Installing CP4AIOPS
   pages:
+    - title: Install CP4AIOPS Prerequisites
+      path: /04-installing-aimanager/04-installing-aimanager-00
     - title: Install CP4AIOPS
       path: /04-installing-aimanager/04-installing-aimanager-01
     - title: Check Installation
