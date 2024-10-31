@@ -10,7 +10,7 @@ You will learn about the following topics:
 - Integrate CP4AIOPS with OpenLDAP for user management
 - Integrate CP4AIOPS with ELK for Log Anomalies
 - Define and train AI Models for
-- Log Anomaly Detectiom
+- Log Anomaly Detection
 - Metric Anomaly Detection
 - Event Grouping
 - Similar Incidents
